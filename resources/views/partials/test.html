@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="2f3LPUtIvbrzY8mJrX7jmcdVYJMYzqWAF7gN2z0Y">
+    <title>Joint Measurement Sheet</title>
+    <link rel="icon" href="http://jtkms-test.ds.jatitinggi.com/favicon.ico" type="image/x-icon">
+    <link href="http://jtkms-test.ds.jatitinggi.com/css/app.css" rel="stylesheet">
+    <link href="http://jtkms-test.ds.jatitinggi.com/css/all.css" rel="stylesheet">
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/autoNumeric.min.js"></script>
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/dropzone/dropzone.js"></script>
+    </head>
+<body>
+        <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Project Engineer</strong>
+                            </span>
+                            <span class="text-muted text-xs block">
+                                Project Engineer
+                                <b class="caret"></b>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="http://jtkms-test.ds.jatitinggi.com/member/1006">Profile</a></li>
+                        <li class="divider"></li>
+                        <li>               <form id="sidemenulogoutform" action="http://jtkms-test.ds.jatitinggi.com/logout" method="POST" style="display: none;">
+                            <input type="hidden" name="_token" value="2f3LPUtIvbrzY8mJrX7jmcdVYJMYzqWAF7gN2z0Y">
+                        </form>
+                        <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('sidemenulogoutform').submit();">
+                            <i class="nav-icon fas fa-fw fa-sign-out-alt">
+        
+                            </i>
+                            Logout
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    SUBCON
+                </div>
+            </li>
+            <li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/dashboard">
+                    <i class="fa fa-desktop"></i>
+                <span class="nav-label">Dashboard</span>
+            </a>
+    
+    </li>
+
+<li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/project-registry">
+                    <i class="fa fa-bar-chart-o"></i>
+                <span class="nav-label">Project</span>
+            </a>
+    
+    </li>
+
+<li >
+    <a href="http://jtkms-test.ds.jatitinggi.com">
+                    <i class="fa fa-map-marker"></i>
+                <span class="nav-label">Locations (GPS)</span>
+                    <span class="fa arrow"></span>
+            </a>
+    
+        <ul class="nav nav-second-level">
+        <li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/location-team">
+                    <i class=""></i>
+                <span class="nav-label">Locations (Team)</span>
+            </a>
+    
+    </li>
+    </ul>
+    </li>
+
+<li >
+    <a href="http://jtkms-test.ds.jatitinggi.com">
+                    <i class="fa fa-bank"></i>
+                <span class="nav-label">Bank Guarantee</span>
+                    <span class="fa arrow"></span>
+            </a>
+    
+        <ul class="nav nav-second-level">
+        <li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/bank-guarantee">
+                    <i class=""></i>
+                <span class="nav-label">Bank Guarantee List</span>
+            </a>
+    
+    </li>
+
+<li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/bank-registry">
+                    <i class=""></i>
+                <span class="nav-label">Bank Registry</span>
+            </a>
+    
+    </li>
+    </ul>
+    </li>
+
+<li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/reports">
+                    <i class="fa fa-newspaper-o"></i>
+                <span class="nav-label">Report</span>
+            </a>
+    
+    </li>
+
+<li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service">
+                    <i class="fa fa-lock"></i>
+                <span class="nav-label">SubCon</span>
+                    <span class="fa arrow"></span>
+            </a>
+    
+        <ul class="nav nav-second-level">
+        <li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service">
+                    <i class=""></i>
+                <span class="nav-label">JMS</span>
+            </a>
+    
+    </li>
+
+<li >
+    <a href="http://jtkms-test.ds.jatitinggi.com/subcon/invoice">
+                    <i class=""></i>
+                <span class="nav-label">Invoice</span>
+            </a>
+    
+    </li>
+    </ul>
+    </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+    <nav class="navbar navbar-static" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <span class="m-r-sm text-muted welcome-message">Welcome Project Engineer.</span>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" id="see-noti">
+                    <i class="fa fa-bell"></i>  <span class="label label-warning notiNo" style="display: none"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-messages">
+                    
+                </ul>
+            </li>
+            
+            <li>
+                <form id="logoutform" action="http://jtkms-test.ds.jatitinggi.com/logout" method="POST" style="display: none;">
+                    <input type="hidden" name="_token" value="2f3LPUtIvbrzY8mJrX7jmcdVYJMYzqWAF7gN2z0Y">
+                </form>
+                <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logoutform').submit();">
+                    <i class="nav-icon fas fa-fw fa-sign-out-alt">
+
+                    </i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+            	<div class="row wrapper border-bottom white-bg page-heading">
+	<div class="col-lg-10">
+		<h2>Joint Measurement Sheet</h2>
+		<ol class="breadcrumb">
+			<li><a href="http://jtkms-test.ds.jatitinggi.com">Home</a></li>
+												<li><a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service">Joint Measurement Sheet</a></li>
+																<li class="active">Joint Measurement Details</li>
+									</ol>
+	</div>
+</div>
+	<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+			<div class="col-sm-6">
+				<div class="ibox">
+					<div class="ibox-title">
+						<h5>Primary Information:</h5>
+					</div>
+					<div class="ibox-content">
+						<div class="form-group row">
+							<label for="workorder_id" class="col-sm-3 form-control-label"><span class="required">*</span> JMS Submission Date :</label>
+							<div class="col-sm-3">
+								29-Jul-2020
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="workorder_id" class="col-sm-3 form-control-label"><span class="required">*</span> 
+																	Review By Date :
+															</label>
+							<div class="col-sm-3">
+																	31-Jul-2020
+															</div>					
+						</div>
+						<div class="form-group row">
+							<label for="workorder_id" class="col-sm-3 form-control-label"><span class="required">*</span> Work Order Number :</label>
+							<div class="col-sm-3">
+								LA/T001/6/HDD
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="major_item" class="col-sm-3 form-control-label"><span class="required">*</span> Major Item :</label>
+							<div class="col-sm-3" id="major_item">
+								HDD
+							</div>
+						</div>						
+						<div class="form-group row">
+							<label for="quantity" class="col-sm-3 form-control-label"><span class="required">*</span> Quantity (m) :</label>
+							<div class="col-sm-3">
+								310.00
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="signed_wo_document" class="col-sm-3 form-control-label"><span class="required">*</span> Signed WorkOrder Document :</label>
+							<div class="col-sm-3">
+																	<a style="text-align: center;" href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document/project/T001/wo-id/6/pnsBF4UzSFBSgSFXEoxycCpVyU0kzRNgQhnsRycB.pdf" target="_blank">
+										<p><i class="fa fa-file-pdf-o fa-3x red"></i></p>
+									</a>
+															</div>
+							<label for="jms_document" class="col-sm-3 form-control-label"><span class="required">*</span> JMS Document :</label>
+							<div class="col-sm-3">
+																	<a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document/project/T001/wo-id/6/G1TpJzokSgZ6IO7DNwLlgIKelx3NhykCCxfNkj6U.png" target="_blank">
+										<img src="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document-small/project/T001/wo-id/6/G1TpJzokSgZ6IO7DNwLlgIKelx3NhykCCxfNkj6U.png" style="float:left; padding-right: 50px">
+									</a>
+															</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="sld_document" class="col-sm-3 form-control-label"><span class="required">*</span> SLD Document :</label>
+							<div class="col-sm-3">
+																	<a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document/project/T001/wo-id/6/eDwCcrjVpOTEfSuGjTz9wJ7KXQ3eE56kl0osRTev.png" target="_blank">
+										<img src="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document-small/project/T001/wo-id/6/eDwCcrjVpOTEfSuGjTz9wJ7KXQ3eE56kl0osRTev.png" style="float:left; padding-right: 50px">
+									</a>
+															</div>
+							<label for="site_photo_document_1" class="col-sm-3 form-control-label"><span class="required">*</span> Site Photo 1 :</label>
+							<div class="col-sm-3">
+																	<a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document/project/T001/wo-id/6/pcqnK05C2huDeXQqJtvUyh2IG3wyDe01UXqo2208.png" target="_blank">
+										<img src="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document-small/project/T001/wo-id/6/pcqnK05C2huDeXQqJtvUyh2IG3wyDe01UXqo2208.png" style="float:left; padding-right: 50px">
+									</a>
+															</div>
+						</div>
+	
+						<div class="form-group row">
+							<label for="site_photo_document_2" class="col-sm-3 form-control-label"><span class="required">*</span> Site Photo 2 :</label>
+							<div class="col-sm-3">
+																	<a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document/project/T001/wo-id/6/bSiEajXZ1v34RElvWngnyu743mTjQiUgK4RyMIyX.png" target="_blank">
+										<img src="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document-small/project/T001/wo-id/6/bSiEajXZ1v34RElvWngnyu743mTjQiUgK4RyMIyX.png" style="float:left; padding-right: 50px">
+									</a>
+															</div>
+							<label for="site_photo_document_3" class="col-sm-3 form-control-label"><span class="required">*</span> Site Photo 3 :</label>
+							<div class="col-sm-3">
+																	<a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document/project/T001/wo-id/6/JPXhCP0fZYS1u8fluK431bIx2tvfepTssLR11mRp.png" target="_blank">
+										<img src="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document-small/project/T001/wo-id/6/JPXhCP0fZYS1u8fluK431bIx2tvfepTssLR11mRp.png" style="float:left; padding-right: 50px">
+									</a>
+															</div>
+						</div>	
+						<div class="form-group row">
+							<label for="site_photo_document_4" class="col-sm-3 form-control-label"><span class="required">*</span> Site Photo 4 :</label>
+							<div class="col-sm-3">
+																	<a href="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document/project/T001/wo-id/6/vzEzhrnyTm7s5uC8rGPnranh0ScJIU6yHoUJ8U00.png" target="_blank">
+										<img src="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/get-document-small/project/T001/wo-id/6/vzEzhrnyTm7s5uC8rGPnranh0ScJIU6yHoUJ8U00.png" style="float:left; padding-right: 50px">
+									</a>
+															</div>
+						</div>
+									
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-sm-4">
+								<form method="POST" action="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/approve-reject-jms" accept-charset="UTF-8" enctype="multipart/form-data"><input name="_token" type="hidden" value="2f3LPUtIvbrzY8mJrX7jmcdVYJMYzqWAF7gN2z0Y">
+				<input name="id" type="hidden" value="20">
+				<input name="actionApproved" type="hidden" value="Approved">
+				<div class="ibox">
+					<div class="ibox-title">
+						<h5>Attach excel payment cert BQ to approve JMS:</h5>
+					</div>
+					<div class="ibox-content">
+
+						
+					</div>
+												<form method="POST" action="http://jtkms-test.ds.jatitinggi.com/subcon/self-service/approve-reject-jms" accept-charset="UTF-8" enctype="multipart/form-data"><input name="_token" type="hidden" value="2f3LPUtIvbrzY8mJrX7jmcdVYJMYzqWAF7gN2z0Y">
+				<input name="id" type="hidden" value="20">
+				<input name="actionRejected" type="hidden" value="Rejected">
+				<div class="ibox">
+					<div class="ibox-title">
+						<h5>Fill in reason, if you're rejecting a JMS:</h5>
+					</div>
+					<div class="ibox-content">
+						<div class="form-group row">
+							<div class="col-sm-8">
+								<input class="form-control" name="reason" type="text">
+							</div>
+							<div class="col-sm-4">
+								<button type="submit" class="btn btn-xs btn-warning pe-reject" id="20">
+									<i class="fa fa-check-square-o">REJECT JMS</i> 
+								</button>
+							</div>
+						</div>
+						</form>
+					</div>
+											</div>
+		</div>
+	</div>
+            <div class="footer">
+	<div>
+		<strong>Copyright</strong> Jati Tinggi Holding Sdn Bhd &copy;
+	</div>
+</div>        </div>
+    </div>
+    <!-- JavaScripts -->
+    <div id="app"></div>
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/app.js"></script>
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/toastr.js"></script>
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/popper.min.js"></script>
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/inspinia/moment-with-locales.min.js"></script>
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/inspinia/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="http://jtkms-test.ds.jatitinggi.com/js/initialization.js"></script>
+        <script src="/js/blueimp-gallery.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
