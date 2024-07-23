@@ -87,6 +87,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('module-permission', 'modulePermissionController');
     Route::resource('my-invoice-subcon', 'invoiceController');
     Route::resource('my-invoice-supplier', 'invoiceSupplierController');
+    Route::resource('project_registry', 'projectRegistryController');
 
     Route::get('mail', 'sendMailReport@sendMail');
 
