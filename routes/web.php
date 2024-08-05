@@ -62,6 +62,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('member/read-all', 'memberController@readNoti')->name('notification.show');
 
     /**
+     * Split the route for project has workorder
+     */
+    Route::get('project_registry/{project_code}/workorder', 'projectRegistryController@displayWorkorder')->name('project-registry.displayWorkorder');
+
+    /**
      * Added route for notification
      */
     Route::get('notification', 'HomeController@getNotification');
@@ -88,6 +93,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('my-invoice-subcon', 'invoiceController');
     Route::resource('my-invoice-supplier', 'invoiceSupplierController');
     Route::resource('project_registry', 'projectRegistryController');
+    Route::resource('workorder', 'workorderController');
 
     Route::get('mail', 'sendMailReport@sendMail');
 

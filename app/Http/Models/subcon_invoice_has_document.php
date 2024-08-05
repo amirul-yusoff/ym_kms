@@ -14,7 +14,7 @@ class subcon_invoice_has_document extends Model
         'mimetype',
         'extension',
         'size',
-        'path',asdasdasd
+        'path',
         'upload_by',
         'created_at',
         'updated_at',

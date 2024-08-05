@@ -13,34 +13,42 @@
 					<div class="ibox-tools">
 				</div>
 				<div class="ibox-content">
-					<table id="project" class="table table-striped table-bordered" data-page-length="25" max-width =  "10px">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>JT Project Code</th>
-								<th>Project_Short_name</th>
-								<th>project_type</th>
-								<th>project_team</th>
-								<th>Project_Status</th>
-								<th>Project_Title</th>
-								<th>Project_Contract_No</th>
-							</tr>
-						</thead>
-						<tbody>
-							@foreach ($data as $item)
-							<tr>
-								<td>{{$item->Project_ID}}</td>
-								<td>{{$item->Project_Code}}</td>
-								<td>{{$item->Project_Short_name}}</td>
-								<td>{{$item->project_type}}</td>
-								<td>{{$item->project_team}}</td>
-								<td>{{$item->Project_Status}}</td>
-								<td>{{$item->Project_Title}}</td>
-								<td>{{$item->Project_Contract_No}}</td>
-							</tr>
-							@endforeach
-						</tbody>
-					</table>
+					<div class="table-responsive" style="overflow-x: auto;">
+						<table id="project" class="table table-striped table-bordered" data-page-length="25" max-width =  "10px">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>JT Project Code</th>
+									<th>Project_Short_name</th>
+									<th>project_type</th>
+									<th>project_team</th>
+									<th>Project_Status</th>
+									<th>Project_Title</th>
+									<th>Project_Contract_No</th>
+									<th>View</th>
+									<th>View WO</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach ($data as $item)
+								<tr>
+									<td>{{$item->Project_ID}}</td>
+									<td>{{$item->Project_Code}}</td>
+									<td>{{$item->Project_Short_name}}</td>
+									<td>{{$item->project_type}}</td>
+									<td>{{$item->project_team}}</td>
+									<td>{{$item->Project_Status}}</td>
+									<td>{{$item->Project_Title}}</td>
+									<td>{{$item->Project_Contract_No}}</td>
+									<td></td>
+									<td>
+										<a class="btn btn-xs btn-primary" href="{{ route('project-registry.displayWorkorder', ['project_code'=>$item->Project_Code],) }}"><i class="fa fa-eye"> View WO ({{count($item->getWO)}})</i></a>
+									</td>
+								</tr>
+								@endforeach
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 			<div class="ibox-title">

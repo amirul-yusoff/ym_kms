@@ -33,7 +33,7 @@ use Twilio\Rest\Client;
 use GuzzleHttp\Client as GuzzleClient;
 
 
-class projectRegistryController  extends Controller
+class workorderController  extends Controller
 {
 
     public function __construct(saveActivityHelper $activityHelper, Request $request,dbCheckerHelper $dbCheckerHelper)
@@ -52,6 +52,11 @@ class projectRegistryController  extends Controller
 
     public function index(Request $request)
     {
+        dd("index");
+    }
+
+    public function indexByProject(Request $request)
+    {
         $title = 'Project Registry';
         $breadcrumb = [
             [
@@ -59,28 +64,9 @@ class projectRegistryController  extends Controller
                 'url' => 'project_registry'
             ],
         ];
-        $data = project_registry::with('getWO')->get();
+        $data = project_registry::all();
        
         return view('project_registry.index', compact('data','title', 'breadcrumb'));
-    }
-
-    public function displayWorkorder(Request $request,$project_code)
-    {
-        $input = $request->all();
-        $title = 'Workorder';
-        $breadcrumb = [
-            [
-                'name' => 'Project Registry',
-                'url' => 'project_registry'
-            ],
-            [
-                'name' => $title,
-                'url' => 'project_registry'
-            ],
-        ];
-        $data = workorder_db_one::where('ProjectCode',$project_code)->get();
-       
-        return view('work_order.index', compact('data','title', 'breadcrumb'));
     }
     
     /**

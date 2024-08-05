@@ -6,7 +6,7 @@
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <span class="m-r-sm text-muted welcome-message">Welcome {{Auth::user()->employee_name}} (SUBCON KMS).</span>
+                <span class="m-r-sm text-muted welcome-message">Welcome {{Auth::user()->employee_name}} (YM TERAS PORTAL).</span>
             </li>
             <li class="dropdown">
                 <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#" id="see-noti">

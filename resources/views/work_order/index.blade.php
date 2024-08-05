@@ -13,8 +13,30 @@
 					<div class="ibox-tools">
 				</div>
 				<div class="ibox-content">
-					
-					
+					<table id="project" class="table table-striped table-bordered" data-page-length="25" max-width =  "10px">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Status</th>
+								<th>WorkOrderNumber</th>
+								<th>Vendor</th>
+								<th>DescriptionofWork</th>
+								<th>View</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach ($data as $item)
+							<tr>
+								<td>{{$item->ID}}</td>
+								<td>{{$item->Status}}</td>
+								<td>{{$item->WorkOrderNumber}}</td>
+								<td>{{$item->Vendor}}</td>
+								<td>{{$item->DescriptionofWork}}</td>
+								<td></td>
+							</tr>
+							@endforeach
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<div class="ibox-title">
@@ -36,23 +58,12 @@
 <script type="text/javascript">
 	const anElement = AutoNumeric.multiple('.currency');
 	$(document).ready(function() {
-		$('#LOC').DataTable( {
+		$('#project').DataTable( {
 			dom: 'Bfrtip',
 			buttons: [
 				'copy', 'csv', 'excel', 'print'
 			]
 		} );
 	} );
-</script>
-<script type="text/javascript">
-$('#myModal').modal('show')
-$('.modal').on('shown.bs.modal', function (e) {
-        $('.modal.show').each(function (index) {
-            $(this).css('z-index', 1101 + index*2);
-        });
-        $('.modal-backdrop').each(function (index) {
-            $(this).css('z-index', 1101 + index*2-1);
-        });
-    });
 </script>
 @endsection

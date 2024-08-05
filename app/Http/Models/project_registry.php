@@ -79,4 +79,8 @@ class project_registry extends Model
 	{
 		return $this->hasOne('App\Http\Models\Member', 'id', 'created_by');
 	}
+	public function getWO()
+	{
+		return $this->hasMany('App\Http\Models\workorder_db_one', 'ProjectCode', 'Project_Code');
+	}
 }
