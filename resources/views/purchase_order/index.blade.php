@@ -18,36 +18,29 @@
 							<thead>
 								<tr>
 									<th>ID</th>
-									<th>JT Project Code</th>
-									<th>Project_Short_name</th>
-									<th>project_type</th>
-									<th>project_team</th>
-									<th>Project_Status</th>
-									<th>Project_Title</th>
-									<th>Project_Contract_No</th>
-									<th>View</th>
-									<th>View WO</th>
-									<th>View Purchase Order</th>
+									<th>PO Number</th>
+									<th>item</th>
+									<th>description</th>
+									<th>quantity</th>
+									<th>rate</th>
+									<th>total_price</th>
+									<th>status</th>
+									<th>supplier</th>
 								</tr>
 							</thead>
 							<tbody>
 								@foreach ($data as $item)
 								<tr>
-									<td>{{$item->Project_ID}}</td>
-									<td>{{$item->Project_Code}}</td>
-									<td>{{$item->Project_Short_name}}</td>
-									<td>{{$item->project_type}}</td>
-									<td>{{$item->project_team}}</td>
-									<td>{{$item->Project_Status}}</td>
-									<td>{{$item->Project_Title}}</td>
-									<td>{{$item->Project_Contract_No}}</td>
-									<td></td>
-									<td>
-										<a class="btn btn-xs btn-primary" href="{{ route('project-registry.displayWorkorder', ['project_code'=>$item->Project_Code],) }}"><i class="fa fa-eye"> View WO ({{count($item->getWO)}})</i></a>
-									</td>
-									<td>
-										<a class="btn btn-xs btn-primary" href="{{ route('project-registry.displayPO', ['project_code'=>$item->Project_Code],) }}"><i class="fa fa-eye"> View PO </i></a>
-									</td>
+									<td>{{$item->id}}</td>
+									<td>{{$item->po_id}}</td>
+									<td>{{$item->item}}</td>
+									<td>{{$item->description}}</td>
+									<td>{{$item->quantity}}</td>
+									<td>{{$item->rate}}</td>
+									<td>{{$item->total_price}}</td>
+									<td>{{$item->status}}</td>
+									<td>{{$item->supplier}}</td>
+									
 								</tr>
 								@endforeach
 							</tbody>

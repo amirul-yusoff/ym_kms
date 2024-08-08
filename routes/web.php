@@ -67,6 +67,15 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('project_registry/{project_code}/workorder', 'projectRegistryController@displayWorkorder')->name('project-registry.displayWorkorder');
 
     /**
+     * Split the route for project has workorder
+     */
+    Route::get('project_registry/{project_code}/workorder/{woId}/paymentcert', 'projectRegistryController@displayPaymentCert')->name('project-registry.displayPaymentCert');
+
+    /**
+     * Split the route for project has purchase Order
+     */
+    Route::get('project_registry/{project_code}/purchase-order', 'projectRegistryController@displayPO')->name('project-registry.displayPO');
+    /**
      * Added route for notification
      */
     Route::get('notification', 'HomeController@getNotification');

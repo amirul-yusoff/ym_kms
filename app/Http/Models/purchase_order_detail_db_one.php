@@ -4,15 +4,11 @@ namespace App\Http\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class workorder_db_one extends Model
+class purchase_order_detail_db_one extends Model
 {
 	// Specify which connection to use
-	protected $table = 'workorder';
+	protected $table = 'purchase_order_detail';
     protected $connection = 'db_jtkms';  // Ensure this is the correct connection name from config/database.php
     public $timestamps = false;
 
-    public function paymentcert()
-    {
-        return $this->hasMany('App\Http\Models\paymentcertificate_db_one', 'WorkOrderNo', 'WorkOrderNumber');
-    }
 }

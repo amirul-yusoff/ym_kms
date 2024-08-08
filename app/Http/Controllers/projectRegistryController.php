@@ -7,7 +7,9 @@ Use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Http\Models\module;
 use App\Http\Models\purchase_order_db_one;
-use App\Http\Models\project_registry ;
+use App\Http\Models\purchase_order_detail_db_one;
+use App\Http\Models\project_registry; 
+use App\Http\Models\paymentcertificate_db_one; 
 use App\Http\Models\subcon_invoice;
 use App\Http\Models\supplier_invoice_has_po;
 use App\Http\Models\supplier_invoice_has_action;
@@ -78,9 +80,52 @@ class projectRegistryController  extends Controller
                 'url' => 'project_registry'
             ],
         ];
-        $data = workorder_db_one::where('ProjectCode',$project_code)->get();
-       
+        $data = workorder_db_one::with('paymentcert')->where('ProjectCode',$project_code)->get();
+
         return view('work_order.index', compact('data','title', 'breadcrumb'));
+    }
+
+    public function displayPO(Request $request,$project_code)
+    {
+        $input = $request->all();
+        
+        $title = 'Purchase Order';
+        $breadcrumb = [
+            [
+                'name' => 'Project Registry',
+                'url' => 'project_registry'
+            ],
+            [
+                'name' => $title,
+                'url' => 'project_registry'
+            ],
+        ];
+        $data = purchase_order_detail_db_one::where('project_code',$project_code)->get();
+
+        return view('purchase_order.index', compact('data','title', 'breadcrumb'));
+    }
+
+    public function displayPaymentCert(Request $request,$project_code,$woId)
+    {
+        $input = $request->all();
+        $title = 'Payment Cert';
+        $breadcrumb = [
+            [
+                'name' => 'Project Registry',
+                'url' => 'project_registry'
+            ],
+            [
+                'name' => 'Workorder',
+                'url' => 'project_registry/'.$project_code.'/workorder'
+            ],
+            [
+                'name' => $title,
+                'url' => 'project_registry'
+            ],
+        ];
+        $data = paymentcertificate_db_one::where('WorkOrderNo','LIKE','%/'.$woId.'/%')->get();
+        
+        return view('payment_cert.index', compact('data','title', 'breadcrumb'));
     }
     
     /**
