@@ -29,9 +29,10 @@ class MemberController extends Controller
 
     public function index()
     {
-        if (! Gate::allows('users_manage')) {
-            return abort(401);
-        }
+        
+        // if (! Gate::allows('users_manage')) {
+        //     return abort(401);
+        // }
         $title = 'Member Management';
         $url = 'admin/members';
         $breadcrumb = [
@@ -40,7 +41,7 @@ class MemberController extends Controller
                 'url'=>$url
             ],
         ];
-        $members = Member::with('findCompanyID')->NotDeleted()->Active()->get();
+        $members = Member::NotDeleted()->Active()->get();
 
         return view('admin.member.index', compact('title', 'breadcrumb', 'url', 'members'));
     }

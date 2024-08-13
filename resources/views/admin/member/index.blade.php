@@ -69,7 +69,7 @@
                                         {{$member->employee_code}}
                                     </td>
                                     <td>
-                                        {{$member->findCompanyID->Co_Name}}
+                                        {{-- {{$member->findCompanyID->Co_Name}} --}}
                                     </td>
                                     <td>
                                         {{$member->employee_name ?? ''}}
