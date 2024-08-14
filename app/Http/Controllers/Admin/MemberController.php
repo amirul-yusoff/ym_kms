@@ -27,7 +27,7 @@ class MemberController extends Controller
      */
     use UploadTrait;
 
-    public function index()
+    public function index(Request $request)
     {
         
         // if (! Gate::allows('users_manage')) {
@@ -41,9 +41,30 @@ class MemberController extends Controller
                 'url'=>$url
             ],
         ];
-        $members = Member::NotDeleted()->Active()->get();
+        $data = Member::NotDeleted()->Active();
 
-        return view('admin.member.index', compact('title', 'breadcrumb', 'url', 'members'));
+        $dropCompany = Member::NotDeleted()->Active()->groupBy('company_id')->pluck('company_id');
+        $dropDownCompany = companies_db_one::whereIn('id', $dropCompany)->pluck('id','Co_Name');
+        $selectedCompany  = $request->company_id;
+        
+        $dropDownPosition = Member::NotDeleted()->Active()->groupBy('position')->pluck('position');
+        $selectedPosition  = $request->position;
+
+        if($request->filled('employee_code')) {
+            $data->where('employee_code', 'like', '%' . $request->employee_code . '%'); 
+        }
+        if($request->filled('company_id')) {
+            $data->where('company_id', 'like', '%' .  $selectedCompany . '%'); 
+        }
+        if($request->filled('employee_name')) {
+            $data->where('employee_name', 'like', '%' .  $request->employee_name . '%'); 
+        }
+        if($request->filled('position')) {
+            $data->where('position', 'like', '%' .  $request->position . '%'); 
+        }
+        $data = $data->get();       
+
+        return view('admin.member.index', compact('title', 'breadcrumb', 'url', 'data', 'dropDownCompany', 'selectedCompany', 'dropDownPosition', 'selectedPosition'));
     }
 
     /**
