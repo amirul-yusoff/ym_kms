@@ -6,6 +6,28 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="wrapper wrapper-content animated fadeInRight">
 	@include('partials.message')
+	<style>
+		.form-control {
+			height: 30px;
+		}
+		.select2-container--default .select2-selection--single {
+			border-radius: 4px;
+			height: 30px;
+			padding: 3px;
+		}
+		.has-value {
+			background-color: #e0f7fa;
+			border-color: #4caf50;
+		}
+		.select2-container.has-value .select2-selection {
+			background-color: #e0f7fa;
+			border-color: #4caf50;
+		}
+		.select2-container.no-value .select2-selection {
+			background-color: #ffffff;
+			border-color: #ced4da; 
+		}
+	</style>
 	<div class="row">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title">
@@ -112,6 +134,30 @@
 			dom: 'Bfrtip',
 			buttons: ['copy', 'csv', 'excel', 'print']
 		} );
+
+		function checkFields() {
+			$('input[type="text"]').each(function() {
+				if ($(this).val() !== '') {
+					$(this).addClass('has-value');
+				} else {
+					$(this).removeClass('has-value');
+				}
+			});
+			$('select').each(function() {
+				var select2Container = $(this).siblings('.select2-container');
+				if ($(this).val() && $(this).val().length > 0) {
+					select2Container.addClass('has-value').removeClass('no-value');
+				} else {
+					select2Container.addClass('no-value').removeClass('has-value');
+				}
+			});
+		}
+
+		checkFields();
+
+		$('input[type="text"], select').on('change', function() {
+			checkFields();
+		});		
 	} );
 </script>
 @endsection
